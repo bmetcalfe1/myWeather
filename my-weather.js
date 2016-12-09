@@ -4,7 +4,6 @@ $(document).ready(function() {
     var currentCity = e.currentTarget[0].value;
     var currentCountry = e.currentTarget[1].value;
 
-    //Idea: add picture of city from first google images result
     var cityLink = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
     $.getJSON(cityLink,
         {
@@ -16,9 +15,7 @@ $(document).ready(function() {
             var rnd = Math.floor(Math.random() * data.items.length);
             var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
             $('body').css('background-image', "url('" + image_src + "')");
-
         });
-
     var weatherKey = "3d116075e0fe88576d7d105ffb94897e";
     var weatherApiLink = "http://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&appid=" + weatherKey;
     $.getJSON(weatherApiLink, function(response) {
@@ -27,8 +24,42 @@ $(document).ready(function() {
       // ***
       // weather-profile
       // ***
-      $('.main-description').text(response.weather[0].main);
-      $('.detail-description').text(response.weather[0].description);
+      function iconGen(weather) {
+        var weather = weather.toLowerCase();
+        console.log(weather);
+        switch (weather) {
+          case 'drizzle':
+            addIcon(weather)
+            break;
+          case 'clouds':
+            addIcon(weather)
+            break;
+          case 'rain':
+            addIcon(weather)
+            break;
+          case 'snow':
+            addIcon(weather)
+            break;
+          case 'clear':
+            addIcon(weather)
+            break;
+          case 'thunderstom':
+            addIcon(weather)
+            break;
+          default:
+            $('div.clouds').removeClass('hide');
+        }
+      }
+
+      function addIcon(weather) {
+        console.log(weather);
+        $('div.' + weather).removeClass('hide');
+        $('.detail-description').text(response.weather[0].description);
+      }
+      
+      var theWeather = response.weather[0].main
+      iconGen(theWeather); //calls function
+      $('div.' + theWeather).addClass('hide');
       // Next: different icon or background image (e.g. snowy mountain, hot desert) depending on the weather.
       // icons based on weather, but do background image based on city
       // for icons follow FCC example
@@ -52,7 +83,7 @@ $(document).ready(function() {
       else {
         $('.temps').text(tempCel);
       }
-      $('.clouds').text(response.clouds.all);
+      $('.cloudy').text(response.clouds.all);
       $('.humidity').text(response.main.humidity);
       // ***
       // sun-data

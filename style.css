@@ -9,6 +9,10 @@ h1 {
 	text-align: center;
 }
 
+.hide {
+  display: none;
+}
+
 /*solid rectangle background over photo*/
 .data-box {
 	text-align: center;
