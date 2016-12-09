@@ -3,6 +3,22 @@ $(document).ready(function() {
   $("#location-choice").on('submit', function (e) {
     var currentCity = e.currentTarget[0].value;
     var currentCountry = e.currentTarget[1].value;
+
+    //Idea: add picture of city from first google images result
+    var cityLink = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+    $.getJSON(cityLink,
+        {
+            tags: currentCity + " skyline",
+            tagmode: "any",
+            format: "json"
+        },
+        function(data) {
+            var rnd = Math.floor(Math.random() * data.items.length);
+            var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
+            $('body').css('background-image', "url('" + image_src + "')");
+
+        });
+
     var weatherKey = "3d116075e0fe88576d7d105ffb94897e";
     var weatherApiLink = "http://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&appid=" + weatherKey;
     $.getJSON(weatherApiLink, function(response) {
@@ -13,6 +29,10 @@ $(document).ready(function() {
       // ***
       $('.main-description').text(response.weather[0].main);
       $('.detail-description').text(response.weather[0].description);
+      // Next: different icon or background image (e.g. snowy mountain, hot desert) depending on the weather.
+      // icons based on weather, but do background image based on city
+      // for icons follow FCC example
+
       // ***
       // weather-data
       // ***
@@ -55,6 +75,7 @@ $(document).ready(function() {
         }
       var formatSunrise = parsedSunriseHours + ":" + parsedSunriseMins;
       var formatSunset = parsedSunsetHours + ":" + parsedSunsetMins; 
+      // Next: Make accept other time zones
 
       $('.sunrise').text(formatSunrise);
       $('.sunset').text(formatSunset);
@@ -65,12 +86,3 @@ $(document).ready(function() {
   });
 
 }); //doc ready
-
-// 1. determine city
-// 2. display weather
-// 3. give user some options to customize. 
-
-// let choose city/country, auto grab country code, and return data.
-// I can push a button to toggle between Fahrenheit and Celsius.
-// I can see a different icon or background image (e.g. snowy mountain, hot desert) depending on the weather.
-

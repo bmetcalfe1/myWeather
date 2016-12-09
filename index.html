@@ -5,7 +5,7 @@
   <meta charset="utf-8">
 
   <title>myWeather</title>
-  <meta name="Brendan Metcalfe" content="Quotes">
+  <meta name="Brendan Metcalfe" content="Weather Data">
 
   <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
@@ -17,10 +17,13 @@
 <body>
 
 	<h1>What's the Weather Saying, Though?</h1>
+	<div class="data-box">
 	<div class="location-box">
 		<form action="" id="location-choice">
 		City:<br>
 		  <input type="text" name="city-choice" value="City...">
+		  <!-- should make city value not having to be backspaced -->
+		  <br>
 		  <br>
 		Country:<br>
 		  <select type="text" name="country-choice">
@@ -274,6 +277,7 @@
 			<option value="ZW">Zimbabwe</option>
 		</select>
 		  <br>
+		  <br>
 		  <input type="submit" value="Submit">
 		</form> 
 	</div>
@@ -292,6 +296,7 @@
 			<p>Sunrise: <span class="sunrise"></span> (EST)</p>
 			<p>Sunset: <span class="sunset"></span> (EST)</p>
 		</div>
+	</div>
 	</div>
 
 	<script src="my-weather.js"></script>

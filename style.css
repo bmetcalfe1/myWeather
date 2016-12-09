@@ -1,7 +1,16 @@
 body {
 }
+/*background image set to cover 100 no repeat fixed etc??
 
+can i set a min size on api call?
+
+*/
 h1 {
+	text-align: center;
+}
+
+/*solid rectangle background over photo*/
+.data-box {
 	text-align: center;
 }
 
