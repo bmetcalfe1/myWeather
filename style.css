@@ -7,17 +7,22 @@ html {
 } 
 
 body {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.8;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
-h1 {
+h1, p {
 	text-align: center;
+	color: black;
 }
 
 .hide {
   display: none;
 }
 
-/*solid rectangle background over photo*/
 .data-box {
 	text-align: center;
 }
