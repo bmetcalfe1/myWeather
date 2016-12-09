@@ -15,10 +15,20 @@ $(document).ready(function() {
       $('.detail-description').text(response.weather[0].description);
       // weather-data
       var tempCel = ((response.main.temp - 273.15).toFixed(2) + " °C");
-      console.log("Celly", tempCel);
-      var tempFar = response.main.temp - 273.15;
-
-      $('.temps').text(tempCel);
+      var tempFar = ((( response.main.temp - 273.15) * 9/5) + 32).toFixed(2) + " °F";
+      if (currentCountry === "US" ||
+          currentCountry === "BZ" ||
+          currentCountry === "KY" ||
+          currentCountry === "GU" ||
+          currentCountry === "PR" ||
+          currentCountry === "PW" ||
+          currentCountry === "VA") 
+      {
+        $('.temps').text(tempFar);  
+      }
+      else {
+        $('.temps').text(tempCel);
+      }
       $('.clouds').text(response.clouds.all);
       $('.humidity').text(response.main.humidity);
       // sun-data
