@@ -26,7 +26,6 @@ $(document).ready(function() {
       // ***
       function iconGen(weather) {
         var weather = weather.toLowerCase();
-        console.log(weather);
         switch (weather) {
           case 'drizzle':
             addIcon(weather)
@@ -43,26 +42,34 @@ $(document).ready(function() {
           case 'clear':
             addIcon(weather)
             break;
+          case 'mist':
+            addIcon(weather)
+            break;
           case 'thunderstom':
             addIcon(weather)
             break;
           default:
+            console.log("defaulting");
             $('div.clouds').removeClass('hide');
         }
       }
 
       function addIcon(weather) {
-        console.log(weather);
-        $('div.' + weather).removeClass('hide');
-        $('.detail-description').text(response.weather[0].description);
+        // for loop to add hide to all div icons children
+        var div = document.getElementById('icons');
+        var divChildren = div.childNodes; // get an array of child nodes
+
+        for (var i=0; i<divChildren.length; i++) {
+            divChildren[i].className += " hide";
+        }
+        if ($('div.' + weather).hasClass('hide')) {
+          $('div.' + weather).removeClass('hide');
+          $('.detail-description').text(response.weather[0].description);
+        }
       }
       
-      var theWeather = response.weather[0].main
+      var theWeather = response.weather[0].main;
       iconGen(theWeather); //calls function
-      $('div.' + theWeather).addClass('hide');
-      // Next: different icon or background image (e.g. snowy mountain, hot desert) depending on the weather.
-      // icons based on weather, but do background image based on city
-      // for icons follow FCC example
 
       // ***
       // weather-data
