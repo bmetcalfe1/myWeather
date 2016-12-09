@@ -14,7 +14,7 @@ $(document).ready(function() {
         function(data) {
             var rnd = Math.floor(Math.random() * data.items.length);
             var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
-            $('body').css('background-image', "url('" + image_src + "')");
+            $('html').css('background-image', "url('" + image_src + "')");
         });
     var weatherKey = "3d116075e0fe88576d7d105ffb94897e";
     var weatherApiLink = "http://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&appid=" + weatherKey;
