@@ -1,5 +1,29 @@
 $(document).ready(function() {
 
+  getLocation();
+
+  function getLocation() {
+    $.get("http://ipinfo.io", function(location) {
+        console.log(location);
+        getPhoto(location.city);
+      }, 'jsonp');
+    }
+
+  function getPhoto(location) {
+    var cityLink = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+    $.getJSON(cityLink,
+      {
+          tags: location + " skyline",
+          tagmode: "any",
+          format: "json"
+      },
+      function(data) {
+        var rnd = Math.floor(Math.random() * data.items.length);
+        var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
+        $('html').css('background-image', "url('" + image_src + "')");
+    });
+  }
+
   $("#location-choice").on('submit', function (e) {
     var currentCity = e.currentTarget[0].value;
     var currentCountry = e.currentTarget[1].value;
@@ -16,6 +40,7 @@ $(document).ready(function() {
             var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
             $('html').css('background-image', "url('" + image_src + "')");
         });
+
     var weatherKey = "3d116075e0fe88576d7d105ffb94897e";
     var weatherApiLink = "http://api.openweathermap.org/data/2.5/weather?q=" + currentCity + "&appid=" + weatherKey;
     $.getJSON(weatherApiLink, function(response) {
