@@ -76,25 +76,25 @@ $(document).ready(function() {
     console.log(weather);
     switch (weather) {
       case 'drizzle':
-        $('.weather-box').addClass('drizzle')
+        $('.weather-box').addClass('drizzlez')
         break;
       case 'clouds':
-        $('.weather-box').addClass('clouds')
+        $('.weather-box').addClass('cloudz')
         break;
       case 'rain':
-        $('.weather-box').addClass('rain')
+        $('.weather-box').addClass('rainz')
         break;
       case 'snow':
-        $('.weather-box').addClass('snow')
+        $('.weather-box').addClass('snowz')
         break;
       case 'clear':
-        $('.weather-box').addClass('clear')
+        $('.weather-box').addClass('clearz')
         break;
       case 'mist':
-        $('.weather-box').addClass('mist')
+        $('.weather-box').addClass('mistz')
         break;
       case 'thunderstorm':
-        $('.weather-box').addClass('thunderstorm')
+        $('.weather-box').addClass('thunderstormz')
         break;
       default:
         console.log("defaulting");
@@ -111,7 +111,7 @@ $(document).ready(function() {
 
     $.getJSON(weatherApiLink, function(response) {
       // need some error handling...
-      $('.locale').text(location);
+      $('.locale').text(city);
       var theWeather = response.weather[0].main;
       iconGen(theWeather);
       weatherPhoto(theWeather);
