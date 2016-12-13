@@ -20,8 +20,6 @@ form {
 }
 input, select {
 	width: 50%;
-	font-size: 20px;
-/*	margin: 2.5%;*/
 }
 #icons p, #icons i {
 	display: inline;
@@ -36,17 +34,14 @@ input, select {
 .location-box {
 	float: right;
 }
-.location-box p {
-/*	margin: 5%;*/
-}
 .weather-box {
 	float: left;
+	padding-bottom: 6px;
 }
 .weather-box, .location-box {
 	height: 100%;
 	width: 50%;
 	text-align: center;
-	font-size: 24px;
 	font-weight: bold;
 	background-color: #ffffff;
   	opacity: 0.8;
