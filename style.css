@@ -6,7 +6,8 @@ html {
 	background-size: cover;
 } 
 body {
-	background-color: #ffffff;
+	background-color: black;
+	margin: 50px;
 }
 h1, p {
 	text-align: center;
@@ -75,4 +76,190 @@ input, select {
 .thunderstorm {
 	background-image: url('http://farmersalmanac.com/wp-content/uploads/2015/06/Thunderstorm-5best.jpg');
 	color: white;
+}
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  	.location-box {
+	width: 100%;
+	float: none;
+	}
+	.weather-box {
+	width: 100%;
+	float: none;
+	}
+}
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+  	.location-box {
+	width: 100%;
+	float: none;
+	}
+	.weather-box {
+	width: 100%;
+	float: none;
+	}
+}
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+  	.location-box {
+	width: 100%;
+	float: none;
+	}
+	.weather-box {
+	width: 100%;
+	float: none;
+	}
+}
+/* ----------- iPhone 5 and 5S ----------- */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+  	.location-box {
+	width: 100%;
+	float: none;
+	}
+	.weather-box {
+	width: 100%;
+	float: none;
+	}
+}
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+  	.location-box {
+	width: 100%;
+	float: none;
+	}
+	.weather-box {
+	width: 100%;
+	float: none;
+	}
+}
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+  	.location-box {
+	width: 100%;
+	float: none;
+	}
+	.weather-box {
+	width: 100%;
+	float: none;
+	}
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+  	.location-box {
+	width: 100%;
+	float: none;
+	}
+	.weather-box {
+	width: 100%;
+	float: none;
+	}
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+  	.location-box {
+	width: 100%;
+	float: none;
+	}
+	.weather-box {
+	width: 100%;
+	float: none;
+	}
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+  	.location-box {
+	width: 100%;
+	float: none;
+	}
+	.weather-box {
+	width: 100%;
+	float: none;
+	}
+}
+
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+  	.location-box {
+	width: 100%;
+	float: none;
+	}
+	.weather-box {
+	width: 100%;
+	float: none;
+	}
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+  	.location-box {
+	width: 100%;
+	float: none;
+	}
+	.weather-box {
+	width: 100%;
+	float: none;
+	}
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) {
+  	.location-box {
+	width: 100%;
+	float: none;
+	}
+	.weather-box {
+	width: 100%;
+	float: none;
+	}
 }
