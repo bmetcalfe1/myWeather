@@ -28,7 +28,7 @@ input, select {
 	display: inline;
 }
 #icons i {
-	padding-left: ;
+	padding-left: 5px;
 }
 .submit {
 	background-color: #8ff442;
@@ -44,12 +44,15 @@ input, select {
 .weather-box {
 	float: left;
 }
+.locale {
+	font-size: 50px;
+	font-weight: bold;
+}
 .weather-box, .location-box {
-	font-size: 30px;
+	font-size: 40px;
 	height: 500px;
 	width: 50%;
 	text-align: center;
-	font-weight: bold;
 	background-color: #ffffff;
 }
 .drizzle {
@@ -81,13 +84,10 @@ input, select {
   and (min-device-width: 320px) 
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
-  	.location-box {
-	width: 100%;
+	.weather-box, .location-box {
+    width: 100%;
 	float: none;
-	}
-	.weather-box {
-	width: 100%;
-	float: none;
+    font-size: 45px;
 	}
 }
 /* Portrait */
@@ -96,13 +96,10 @@ input, select {
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
-  	.location-box {
-	width: 100%;
+	.weather-box, .location-box {
+    width: 100%;
 	float: none;
-	}
-	.weather-box {
-	width: 100%;
-	float: none;
+    font-size: 45px;
 	}
 }
 /* Landscape */
@@ -111,13 +108,10 @@ input, select {
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-  	.location-box {
-	width: 100%;
+	.weather-box, .location-box {
+    width: 100%;
 	float: none;
-	}
-	.weather-box {
-	width: 100%;
-	float: none;
+    font-size: 45px;
 	}
 }
 /* ----------- iPhone 5 and 5S ----------- */
@@ -126,13 +120,10 @@ input, select {
   and (min-device-width: 320px) 
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2) {
-  	.location-box {
-	width: 100%;
+	.weather-box, .location-box {
+    width: 100%;
 	float: none;
-	}
-	.weather-box {
-	width: 100%;
-	float: none;
+    font-size: 45px;
 	}
 }
 /* Portrait */
@@ -141,13 +132,10 @@ input, select {
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
-  	.location-box {
-	width: 100%;
+	.weather-box, .location-box {
+    width: 100%;
 	float: none;
-	}
-	.weather-box {
-	width: 100%;
-	float: none;
+    font-size: 45px;
 	}
 }
 /* Landscape */
@@ -156,13 +144,10 @@ input, select {
   and (max-device-width: 568px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
-  	.location-box {
-	width: 100%;
+	.weather-box, .location-box {
+    width: 100%;
 	float: none;
-	}
-	.weather-box {
-	width: 100%;
-	float: none;
+    font-size: 45px;
 	}
 }
 
@@ -173,13 +158,10 @@ input, select {
   and (min-device-width: 375px) 
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2) { 
-  	.location-box {
-	width: 100%;
+	.weather-box, .location-box {
+    width: 100%;
 	float: none;
-	}
-	.weather-box {
-	width: 100%;
-	float: none;
+    font-size: 45px;
 	}
 }
 
@@ -189,13 +171,10 @@ input, select {
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) { 
-  	.location-box {
-	width: 100%;
+	.weather-box, .location-box {
+    width: 100%;
 	float: none;
-	}
-	.weather-box {
-	width: 100%;
-	float: none;
+    font-size: 45px;
 	}
 }
 
@@ -205,13 +184,10 @@ input, select {
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) { 
-  	.location-box {
-	width: 100%;
+	.weather-box, .location-box {
+    width: 100%;
 	float: none;
-	}
-	.weather-box {
-	width: 100%;
-	float: none;
+    font-size: 45px;
 	}
 }
 
@@ -222,13 +198,10 @@ input, select {
   and (min-device-width: 414px) 
   and (max-device-width: 736px) 
   and (-webkit-min-device-pixel-ratio: 3) { 
-  	.location-box {
-	width: 100%;
+	.weather-box, .location-box {
+    width: 100%;
 	float: none;
-	}
-	.weather-box {
-	width: 100%;
-	float: none;
+    font-size: 45px;
 	}
 }
 
@@ -238,13 +211,10 @@ input, select {
   and (max-device-width: 736px) 
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: portrait) { 
-  	.location-box {
-	width: 100%;
+	.weather-box, .location-box {
+    width: 100%;
 	float: none;
-	}
-	.weather-box {
-	width: 100%;
-	float: none;
+    font-size: 45px;
 	}
 }
 
@@ -254,12 +224,9 @@ input, select {
   and (max-device-width: 736px) 
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) {
-  	.location-box {
-	width: 100%;
+	.weather-box, .location-box {
+    width: 100%;
 	float: none;
-	}
-	.weather-box {
-	width: 100%;
-	float: none;
+    font-size: 45px;
 	}
 }
