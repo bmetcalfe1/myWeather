@@ -5,32 +5,43 @@ html {
 	-o-background-size: cover;
 	background-size: cover;
 } 
-
 body {
-  margin: 30px;
-  background-color: #ffffff;
-  border: 1px solid black;
-  opacity: 0.8;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
+	background-color: #ffffff;
+	opacity: 0.8;
+	filter: alpha(opacity=60); /* For IE8 and earlier */
 }
-
 h1, p {
 	text-align: center;
 	color: black;
 }
-
+input, select {
+	width: 50%;
+	font-size: 20px;
+	margin: 5%;
+}
+.submit {
+	background-color: #8ff442;
+	border: none;
+}
 .hide {
-  display: none;
+	display: none;
 }
-
-.data-box {
-	text-align: center;
-}
-
 .location-box {
-	text-align: center;
+	float: right;
 }
-
+.location-box p {
+	margin: 5%;
+}
 .weather-box {
+	float: left;
+}
+.weather-box, .location-box {
+	height: 100%;
+	width: 50%;
 	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	background-color: #ffffff;
+  	opacity: 0.8;
+  	filter: alpha(opacity=60); /* For IE8 and earlier */
 }
