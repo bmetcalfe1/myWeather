@@ -1,16 +1,11 @@
 $(document).ready(function() {
 
-  getLocation();
-
   function getLocation() {
     $.get("http://ipinfo.io", function(location) {
-        console.log(location);
         var city = location.city;
         var country = location.country;
-        // console.log(country);
         getPhoto(city);
         getWeather(city + ", " + country);
-        // return city + ", " + country;
       }, 'jsonp');;
   }
 
@@ -23,7 +18,6 @@ $(document).ready(function() {
           format: "json"
       },
       function(data) {
-        console.log(data);
         var rnd = Math.floor(Math.random() * data.items.length);
         if (rnd === 0) {
           console.log("No images to show!");
@@ -35,6 +29,7 @@ $(document).ready(function() {
 
   function addIcon(weather) {
     // for loop to add hide to all div icons children
+    // addIcon used only in iconGen
     var div = document.getElementById('icons');
     var divChildren = div.childNodes; // get an array of child nodes
 
@@ -77,31 +72,22 @@ $(document).ready(function() {
   }
 
   function getWeather(location) {
-    console.log(location);
     var city = location.split(',')[0];
     var country = location.split(', ')[1];
-    console.log(city);
-    console.log(country);
 
     var weatherKey = "3d116075e0fe88576d7d105ffb94897e";
     var weatherApiLink = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + weatherKey;
 
     $.getJSON(weatherApiLink, function(response) {
-      
       // need some error handling...
-      console.log(response);
-
+      $('.locale').text(location);
       var theWeather = response.weather[0].main;
       iconGen(theWeather);
+      $('.detail-description').text(response.weather[0].description);
 
-      // ***
-      // weather-data
-      // ***
       var tempCel = ((response.main.temp - 273.15).toFixed(2) + " °C");
       var tempFar = ((( response.main.temp - 273.15) * 9/5) + 32).toFixed(2) + " °F";
       //countries where farhenheit
-      $('.detail-description').text(response.weather[0].description);
-      $('.locale').text(location);
       if (country === "US" ||
           country === "BZ" ||
           country === "KY" ||
@@ -144,6 +130,8 @@ $(document).ready(function() {
       $('.sunset').text(formatSunset);
       });
     }
+
+  getLocation();
 
   $("#location-choice").on('submit', function (e) {
     var currentCity = e.currentTarget[0].value;
