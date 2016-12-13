@@ -14,10 +14,17 @@ h1, p {
 	text-align: center;
 	color: black;
 }
+form {
+	margin: none;
+	padding: none;
+}
 input, select {
 	width: 50%;
 	font-size: 20px;
-	margin: 2.5%;
+/*	margin: 2.5%;*/
+}
+#icons p, #icons i {
+	display: inline;
 }
 .submit {
 	background-color: #8ff442;
@@ -30,7 +37,7 @@ input, select {
 	float: right;
 }
 .location-box p {
-	margin: 5%;
+/*	margin: 5%;*/
 }
 .weather-box {
 	float: left;

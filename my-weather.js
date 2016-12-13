@@ -83,7 +83,14 @@ $(document).ready(function() {
       $('.locale').text(location);
       var theWeather = response.weather[0].main;
       iconGen(theWeather);
-      $('.detail-description').text(response.weather[0].description);
+
+      var theDescription = response.weather[0].description;
+      function capitalizeFirst(string) {
+          var newDesc = string.charAt(0).toUpperCase() + string.slice(1);
+          $('.detail-description').text(newDesc);
+      }
+      capitalizeFirst(theDescription);
+
 
       var tempCel = ((response.main.temp - 273.15).toFixed(2) + " °C");
       var tempFar = ((( response.main.temp - 273.15) * 9/5) + 32).toFixed(2) + " °F";
