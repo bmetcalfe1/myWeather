@@ -62,8 +62,39 @@ $(document).ready(function() {
       case 'mist':
         addIcon(weather)
         break;
-      case 'thunderstom':
+      case 'thunderstorm':
         addIcon(weather)
+        break;
+      default:
+        console.log("defaulting");
+        $('div.clouds').removeClass('hide');
+    }
+  }
+
+  function weatherPhoto(weather) {
+    var weather = weather.toLowerCase();
+    console.log(weather);
+    switch (weather) {
+      case 'drizzle':
+        $('.weather-box').addClass('drizzle')
+        break;
+      case 'clouds':
+        $('.weather-box').addClass('clouds')
+        break;
+      case 'rain':
+        $('.weather-box').addClass('rain')
+        break;
+      case 'snow':
+        $('.weather-box').addClass('snow')
+        break;
+      case 'clear':
+        $('.weather-box').addClass('clear')
+        break;
+      case 'mist':
+        $('.weather-box').addClass('mist')
+        break;
+      case 'thunderstorm':
+        $('.weather-box').addClass('thunderstorm')
         break;
       default:
         console.log("defaulting");
@@ -83,6 +114,7 @@ $(document).ready(function() {
       $('.locale').text(location);
       var theWeather = response.weather[0].main;
       iconGen(theWeather);
+      weatherPhoto(theWeather);
 
       var theDescription = response.weather[0].description;
       function capitalizeFirst(string) {

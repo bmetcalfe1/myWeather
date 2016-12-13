@@ -7,12 +7,13 @@ html {
 } 
 body {
 	background-color: #ffffff;
-	opacity: 0.8;
-	filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 h1, p {
 	text-align: center;
 	color: black;
+}
+h1 {
+	background-color: white;
 }
 form {
 	margin: none;
@@ -20,9 +21,13 @@ form {
 }
 input, select {
 	width: 50%;
+	font-size: 30px;
 }
 #icons p, #icons i {
 	display: inline;
+}
+#icons i {
+	padding-left: ;
 }
 .submit {
 	background-color: #8ff442;
@@ -33,17 +38,41 @@ input, select {
 }
 .location-box {
 	float: right;
+/*	add cool background*/
 }
 .weather-box {
 	float: left;
-	padding-bottom: 6px;
 }
 .weather-box, .location-box {
-	height: 100%;
+	font-size: 30px;
+	height: 500px;
 	width: 50%;
 	text-align: center;
 	font-weight: bold;
 	background-color: #ffffff;
-  	opacity: 0.8;
-  	filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+.drizzle {
+	background-image: url('http://efdreams.com/data_images/dreams/rain/rain-02.jpg');
+	color: white;
+}
+.rain {
+	background-image: url('http://favim.com/orig/201103/07/Favim.com-5981.jpg');
+	color: white;
+}
+.clear {
+	background-image: url('http://bitaurora.com/playground/previews/2011/03/Clear-Sky.jpg');
+}
+.clouds {
+	background-image: url('http://www.renianstudio.com/wp-content/uploads/2013/06/2.png');
+}
+.mist {
+	background-image: url('http://img06.deviantart.net/b9ee/i/2011/080/b/e/misty_sky_by_wshm-d3c642n.jpg');
+	color: white;
+}
+.snow {
+	background-image: url('http://vignette4.wikia.nocookie.net/phobia/images/a/aa/Snow.jpg/revision/latest?cb=20161109045734');
+}
+.thunderstorm {
+	background-image: url('http://farmersalmanac.com/wp-content/uploads/2015/06/Thunderstorm-5best.jpg');
+	color: white;
 }
